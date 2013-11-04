@@ -1,0 +1,50 @@
+@import "compass";
+@import "partials/normalize";
+@import "partials/blankwork";
+@import "spr/*.png";
+
+.wrapper{
+	@include wrapper;
+}
+
+header{
+	@include container;
+	padding: 68px;
+
+	h1{
+		@include spr-sprite("icons");
+		@include hide-text;
+		height: 91px;
+	}
+
+	h1,h6{
+		@include column(2);
+	}
+	nav{
+		@include column($_columns - 4);
+	}
+}
+
+.introduction,#slider{
+	@include fullwidth;
+	background-color: #ccc;
+}
+
+.pitch{
+	@include column( $_columns / 3 );
+	background-color: yellow;
+
+	div{
+		width: 320px;
+		height: 129px;
+		background-color: gray;
+	}
+
+	&.left{
+		@include alpha;
+
+	}
+	&.right{
+		@include omega;
+	}
+}
